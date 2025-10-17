@@ -1,0 +1,182 @@
+[
+  {
+    "nombre": "Atardecer Óleo",
+    "tamaño": "50x70",
+    "categoria": "pintura",
+    "autor": "Wendy Becerra",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 100000,
+    "descripcion": "Pintura cálida de un atardecer al óleo."
+  },
+  {
+    "nombre": "Llavero Corazón",
+    "tamaño": "5",
+    "categoria": "llavero",
+    "autor": "Carlos Ruiz",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 15000,
+    "descripcion": "Llavero artesanal en forma de corazón."
+  },
+  {
+    "nombre": "Colores de Invierno",
+    "tamaño": "60x90",
+    "categoria": "pintura",
+    "autor": "Lucía Martínez",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 120000,
+    "descripcion": "Obra abstracta con tonos fríos."
+  },
+  {
+    "nombre": "Llavero Gato",
+    "tamaño": "6",
+    "categoria": "llavero",
+    "autor": "Sandra Ríos",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 16000,
+    "descripcion": "Llavero con figura de gato en fieltro."
+  },
+  {
+    "nombre": "Noche Estrellada",
+    "tamaño": "70x50",
+    "categoria": "pintura",
+    "autor": "Wendy Becerra",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 130000,
+    "descripcion": "Inspirada en la obra de Van Gogh."
+  },
+  {
+    "nombre": "Llavero Inicial 'A'",
+    "tamaño": "4",
+    "categoria": "llavero",
+    "autor": "Oscar Díaz",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 12000,
+    "descripcion": "Llavero personalizado con letra inicial."
+  },
+  {
+    "nombre": "Montañas Azules",
+    "tamaño": "80x100",
+    "categoria": "pintura",
+    "autor": "Javier Torres",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 140000,
+    "descripcion": "Paisaje montañoso con tonos fríos."
+  },
+  {
+    "nombre": "Llavero Panda",
+    "tamaño": "6.5",
+    "categoria": "llavero",
+    "autor": "Fernanda Soto",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 17000,
+    "descripcion": "Mini panda tejido a mano."
+  },
+  {
+    "nombre": "Luz Interior",
+    "tamaño": "90x70",
+    "categoria": "pintura",
+    "autor": "María Gómez",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 150000,
+    "descripcion": "Juego de luces y sombras interiores."
+  },
+  {
+    "nombre": "Llavero Cámara",
+    "tamaño": "5.5",
+    "categoria": "llavero",
+    "autor": "Isabel Navas",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 18000,
+    "descripcion": "Miniatura de cámara fotográfica como llavero."
+  },
+  {
+    "nombre": "Mar Tranquilo",
+    "tamaño": "50x60",
+    "categoria": "pintura",
+    "autor": "Camila León",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 110000,
+    "descripcion": "Mar calmo pintado en tonos celestes."
+  },
+  {
+    "nombre": "Llavero Anime",
+    "tamaño": "7",
+    "categoria": "llavero",
+    "autor": "Daniel Castro",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 20000,
+    "descripcion": "Llavero de personaje de anime popular."
+  },
+  {
+    "nombre": "Travesía Nocturna",
+    "tamaño": "60x90",
+    "categoria": "pintura",
+    "autor": "Gonzalo Peña",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 125000,
+    "descripcion": "Barco bajo un cielo nocturno estrellado."
+  },
+  {
+    "nombre": "Llavero Flor",
+    "tamaño": "5",
+    "categoria": "llavero",
+    "autor": "Wendy Becerra",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 13000,
+    "descripcion": "Flor tejida como llavero de lana."
+  },
+  {
+    "nombre": "Reflejo Interior",
+    "tamaño": "80x80",
+    "categoria": "pintura",
+    "autor": "Luis Paredes",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 145000,
+    "descripcion": "Reflejo de un rostro en agua."
+  },
+  {
+    "nombre": "Llavero Estrella",
+    "tamaño": "6",
+    "categoria": "llavero",
+    "autor": "Claudia Vera",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 15000,
+    "descripcion": "Llavero con forma de estrella brillante."
+  },
+  {
+    "nombre": "Sombras de la Tarde",
+    "tamaño": "100x70",
+    "categoria": "pintura",
+    "autor": "Pedro León",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 155000,
+    "descripcion": "Sombras largas proyectadas al atardecer."
+  },
+  {
+    "nombre": "Llavero Luna",
+    "tamaño": "5.5",
+    "categoria": "llavero",
+    "autor": "Lucía Martínez",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 19000,
+    "descripcion": "Luna creciente bordada a mano."
+  },
+  {
+    "nombre": "Caminos del Alma",
+    "tamaño": "85x60",
+    "categoria": "pintura",
+    "autor": "Wendy Becerra",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 135000,
+    "descripcion": "Abstracción del recorrido emocional interno."
+  },
+  {
+    "nombre": "Llavero Sol",
+    "tamaño": "6",
+    "categoria": "llavero",
+    "autor": "Carlos Ruiz",
+    "img": "http://localhost:5000/obras/images.jpg",
+    "precio": 18000,
+    "descripcion": "Sol radiante en versión miniatura."
+  }
+]
