@@ -7,8 +7,9 @@ const publicacionSchema = new mongoose.Schema({
     required: true,
   },
   nombre: { type: String },
+  likes: { type: Number },
   categoria: { type: String },
-  img: { type: String },
+  img: { type: String,  default: null },
   descripcion: { type: String, required: true },
 }, { timestamps: true });
 

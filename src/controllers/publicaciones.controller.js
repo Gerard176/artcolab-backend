@@ -3,25 +3,27 @@ import { uploads_URL } from "../config/config.js";
 import publicacionModel from "../models/publicaciones.model.js";
 import mongoose from "mongoose";
 
-
 export const postPublicacion = async (req, res) => {
   const { idUsuario, nombre, descripcion, categoria } = req.body;
 
-  // Nombre del archivo (solo este se guarda en la base de datos)
-  const fileName = req.file.filename;
-
-  // URL completa que se enviará al frontend
-  const imageUrl = `${publicaciones_URL}${fileName}`;
-
-  console.log(req.body);
-
   try {
+    // 🔹 Si el usuario sube una imagen, la tomamos. Si no, queda como null.
+    let fileName = null;
+    let imageUrl = null;
+
+    if (req.file) {
+      fileName = req.file.filename;
+      imageUrl = `${publicaciones_URL}${fileName}`;
+    }
+
+    // 🔹 Creamos la publicación
     const publicacion = new publicacionModel({
       idUsuario: new mongoose.Types.ObjectId(idUsuario),
       nombre,
-      img: fileName, // Solo guardamos el nombre del archivo
+      img: fileName, // Puede ser null si no hay imagen
       descripcion,
       categoria,
+      likes: 0,
     });
 
     await publicacion.save();
@@ -30,15 +32,15 @@ export const postPublicacion = async (req, res) => {
       return res.status(404).json({ error: "Publicación no creada" });
     }
 
-    // Enviamos la publicación al frontend con la URL completa
+    // 🔹 Enviamos la respuesta (si no hay imagen, img será null)
     res.status(200).json({
       ...publicacion.toObject(),
-      img: imageUrl, // Reemplazamos el nombre por la URL completa en la respuesta
+      img: imageUrl, // URL si hay imagen, null si no
     });
   } catch (error) {
     console.error(error);
     res.status(500).json({
-      error: "Error interno del servidor: " + error,
+      error: "Error interno del servidor: " + error.message,
     });
   }
 };

@@ -52,7 +52,7 @@ export const loginUsuario = async (req, res) => {
     const token = jwt.sign(
       { id: usuario._id, email: usuario.email },
       config.JWT_SECRET,
-      { expiresIn: "1h" }
+      { expiresIn: "10h" }
     );
 
     // 4. Responder con éxito
@@ -70,9 +70,11 @@ export const loginUsuario = async (req, res) => {
 export const registroUsuario = async (req, res) => {
   // Imagen por defecto
   const imgPerf = "usuario.png";
-
-  const { nombre, descripcion, apellido, nickName, email, telefono, password } = req.body;
-
+  var { nombre, descripcion, apellido, nickName, email, telefono, password } = req.body;
+  console.log(telefono);
+  if (telefono == "") {
+    telefono = 0;
+  }
   try {
     // Verificar si el email ya está registrado
     const usuarioRepetido = await usuarioModel.findOne({ email });
@@ -83,7 +85,7 @@ export const registroUsuario = async (req, res) => {
     // Encriptar la contraseña
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
-
+    
     // Crear usuario (guardando solo el nombre de la imagen)
     const usuario = new usuarioModel({
       imgPerf,
@@ -138,8 +140,6 @@ export const actualizarUsuario = async (req, res) => {
 };
 
 export const actualizarImagenDeUsuario = async (req, res) => {
-  console.log(req.file);
-  console.log(req.body);
 
   try {
     const userId = req.headers.id; // ID del usuario autenticado
