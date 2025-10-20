@@ -28,5 +28,4 @@ routerUsuarios.delete('/usuarios/:id', usuariosController.eliminarUsuario);
 routerUsuarios.put('/usuarios/:id', usuariosController.actualizarUsuario);
 routerUsuarios.post('/usuarios/actualizarImagenDeUsuario', upload.single("imgPerf"), usuariosController.actualizarImagenDeUsuario);
 
-
 export default routerUsuarios;

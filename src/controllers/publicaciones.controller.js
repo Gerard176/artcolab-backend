@@ -2,6 +2,7 @@ import { publicaciones_URL } from "../config/config.js";
 import { uploads_URL } from "../config/config.js";
 import publicacionModel from "../models/publicaciones.model.js";
 import mongoose from "mongoose";
+import usuarioModel from "../models/usuarios.model.js";
 
 export const postPublicacion = async (req, res) => {
   const { idUsuario, nombre, descripcion, categoria } = req.body;
@@ -138,30 +139,42 @@ export const getPublicacion = async (req, res) => {
     });
   }
 };
-// Obtener las publicaciones de un usuario en específico
+// 🔹 Obtener las publicaciones de un usuario en específico + info del usuario
 export const getPublicacionesUsuario = async (req, res) => {
   try {
     const userId = req.params.id;
 
+    // Validar ID
     if (!mongoose.Types.ObjectId.isValid(userId)) {
       return res.status(400).json({ error: "ID de usuario no válido" });
     }
 
-    // 🟩 Obtiene las publicaciones desde la base de datos
-    const publicaciones = await publicacionModel.find({ idUsuario: userId });
+    // 🟩 Buscar al usuario
+    const usuario = await usuarioModel.findById(userId).lean();
+    if (!usuario) {
+      return res.status(404).json({ error: "Usuario no encontrado" });
+    }
 
-    // 🟦 Mapea los resultados para agregar la URL completa al campo img
-    const publicacionesConURL = publicaciones.map((pub) => {
-      // Si img existe y no es ya una URL, la construimos
-      const imgUrl = pub.img ? `${publicaciones_URL}${pub.img}` : null;
+    // 🟦 Construir URL completa de la imagen del usuario (si tiene)
+    const usuarioConImagen = {
+      ...usuario,
+      imgPerf: usuario.imgPerf ? `${uploads_URL}${usuario.imgPerf}` : null,
+    };
 
-      return {
-        ...pub.toObject(),
-        img: imgUrl, // URL completa para el frontend
-      };
+    // 🟩 Obtener las publicaciones del usuario
+    const publicaciones = await publicacionModel.find({ idUsuario: userId }).lean();
+
+    // 🟦 Construir las URLs de las imágenes de las publicaciones
+    const publicacionesConURL = publicaciones.map((pub) => ({
+      ...pub,
+      img: pub.img ? `${publicaciones_URL}${pub.img}` : null,
+    }));
+
+    // 🟨 Respuesta combinada
+    res.status(200).json({
+      usuario: usuarioConImagen,
+      publicaciones: publicacionesConURL,
     });
-
-    res.status(200).json({ publicaciones: publicacionesConURL });
   } catch (error) {
     console.error("❌ Error al obtener publicaciones del usuario:", error);
     res.status(500).json({ error: "Error al obtener publicaciones del usuario" });
