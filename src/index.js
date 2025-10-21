@@ -21,5 +21,5 @@ app.use('/publicaciones', express.static("public/img/publicaciones"));
 
 // 🔹 Escucha en todas las interfaces
 app.listen(PORT, '127.0.0.1', () => {
-  console.log(`✅ Servidor corriendo en 127.0.0.1:$PORT`);
+  console.log(`✅ Servidor corriendo en 127.0.0.1:${PORT}`);
 });
