@@ -20,6 +20,6 @@ app.use('/uploads', express.static("public/img"));
 app.use('/publicaciones', express.static("public/img/publicaciones"));
 
 // 🔹 Escucha en todas las interfaces
-app.listen(PORT, '192.168.170.84', () => {
-  console.log(`✅ Servidor corriendo en 192.168.170.84:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`✅ Servidor corriendo en 0.0.0.0:${PORT}`);
 });
